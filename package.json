@@ -1,0 +1,36 @@
+
+{
+  "name": "react-native-rxinput",
+  "version": "0.0.1",
+  "description": "React Native rxinput for IOS & Android & windows.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native",
+    "textinput",
+    "rxinput",
+    "react-component",
+    "react native textinput",
+    "react-native-rxinput",
+    "react native rxinput",
+    "ios",
+    "android",
+    "windows"
+  ],
+  "author": "srxboys (https://github.com/srxboys)",
+  "license": "MIT",
+  "repository": {
+      "type": "git",
+      "url": "git@github.com:RXReactNative/reacty-native-rxinput.git"
+  },
+  "peerDependencies": {
+    "react-native": ">=0.41.2"
+  },
+  "devDependencies": {
+      "react": "^16.0.0",
+      "react-native": "^0.41.2",
+      "prop-types": "*"
+  }
+}
