@@ -56,8 +56,6 @@ import RXTextInput, {RXNumberUtil} from 'react-native-rxinput'
 | email        | 邮箱                         |               |
 | captcha      | 验证码                       |               |
 | graphCaptcha | 校验图形验证码                 |               |
-| checkBoxSingle | 复选框 - 单选                |               |
-| checkBoxMulti | 复选框 - 多选                 |               |
 | password     | 输入的文本加密                 |               |
 
 ---
