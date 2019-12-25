@@ -17,8 +17,6 @@ const ValidationType = {
   TypeIdCardNo: 'idCardNo',//8-身份证
   TypeEmail: 'email',      //9-邮箱
   TypeGraphCaptcha: 'graphCaptcha',    //10-校验图形验证码
-  TypeCheckBoxSingle: 'checkBoxSingle',//11-复选框 - 单选
-  TypeCheckBoxMulti: 'checkBoxMulti',  //12-复选框 - 多选
 
   AllTypes: function() {
     return [
@@ -32,8 +30,6 @@ const ValidationType = {
       this.TypeIdCardNo,
       this.TypeBankCard,
       this.TypeGraphCaptcha,
-      this.TypeCheckBoxSingle,
-      this.TypeCheckBoxMulti,
     ]
   },
  }
