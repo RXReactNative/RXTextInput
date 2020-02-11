@@ -12,7 +12,6 @@
 'use strict'
 
 import BaseTextInputView from './component/TextInputPlaceholder'
-import CommonColor from '../../styles/CommonColor'
 
 class RXAmountInput extends BaseTextInputView {
   static propTypes = {
@@ -21,7 +20,7 @@ class RXAmountInput extends BaseTextInputView {
 
   static defaultProps = {
     ...BaseTextInputView.defaultProps,
-    placeholderColor: CommonColor.TextPlaceholder,
+    placeholderColor: 'gray',
   };
 
   constructor(props, context) {
