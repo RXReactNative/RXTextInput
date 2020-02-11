@@ -3,7 +3,7 @@
 ## Getting started
 `$ npm install react-native-rxinput --save`
 
-## use
+## Usage
 ```js
 import RXTextInput, {RXNumberUtil} from 'react-native-rxinput'
 
@@ -23,6 +23,9 @@ import RXTextInput, {RXNumberUtil} from 'react-native-rxinput'
 ```
 
 ---
+
+<br />
+<br />
 
 根据 `React-Native` 的 [TextInput](http://facebook.github.io/react-native/docs/textinput) 控制和过滤掉文本。
 

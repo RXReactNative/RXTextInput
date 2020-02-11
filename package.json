@@ -25,9 +25,6 @@
       "type": "git",
       "url": "git@github.com:RXReactNative/reacty-native-rxinput.git"
   },
-  "peerDependencies": {
-    "react-native": ">=0.41.2"
-  },
   "devDependencies": {
       "react": "^16.0.0",
       "react-native": "^0.41.2",

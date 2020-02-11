@@ -1,0 +1,487 @@
+do script <react-native bundle>  >>>>>
+now time:>2019-07-22 13:09:34
+
+ parameter_1： ios
+ parameter_2： debug
+
+do script <react-native bundle>  >>>>>
+now time:>2019-07-22 13:20:13
+
+ parameter_1： ios
+ parameter_2： debug
+
+ doing ...
+ 
+ react-native bundle
+ --platform ios
+ --dev true
+ --entry-file index.ios.js
+ --bundle-output ./ios/bundle/main.jsbundle
+ --assets-dest ./ios/bundle
+
+ scanning whether to delete unnecessary files.
+ have meta file & delete => ./ios/bundle/main.jsbundle.meta
+
+<<<< end bundle >>>>>>
+-------------------------------
+
+
+
+do script <react-native bundle>  >>>>>
+now time:>2019-07-22 13:20:54
+
+ parameter_1： ios
+ parameter_2： debug
+
+ doing ...
+ 
+ react-native bundle
+ --platform ios
+ --dev true
+ --entry-file index.ios.js
+ --bundle-output ./ios/bundle/main.jsbundle
+ --assets-dest ./ios/bundle
+
+ scanning whether to delete unnecessary files.
+ have meta file & delete => ./ios/bundle/main.jsbundle.meta
+
+<<<< end bundle >>>>>>
+-------------------------------
+
+
+
+do script <react-native bundle>  >>>>>
+now time:>2019-07-22 13:26:06
+
+ parameter_1： ios
+ parameter_2： debug
+
+ doing ...
+ 
+ react-native bundle
+ --platform ios
+ --dev true
+ --entry-file index.ios.js
+ --bundle-output ./ios/bundle/main.jsbundle
+ --assets-dest ./ios/bundle
+
+ scanning whether to delete unnecessary files.
+ have meta file & delete => ./ios/bundle/main.jsbundle.meta
+
+<<<< end bundle >>>>>>
+-------------------------------
+
+
+
+do script <react-native bundle>  >>>>>
+now time:>2019-07-22 13:27:21
+
+ parameter_1： ios
+ parameter_2： debug
+
+ doing ...
+ 
+ react-native bundle
+ --platform ios
+ --dev true
+ --entry-file index.ios.js
+ --bundle-output ./ios/bundle/main.jsbundle
+ --assets-dest ./ios/bundle
+
+ scanning whether to delete unnecessary files.
+ have meta file & delete => ./ios/bundle/main.jsbundle.meta
+
+<<<< end bundle >>>>>>
+-------------------------------
+
+
+
+do script <react-native bundle>  >>>>>
+now time:>2019-07-22 13:28:13
+
+ parameter_1： ios
+ parameter_2： debug
+
+ doing ...
+ 
+ react-native bundle
+ --platform ios
+ --dev true
+ --entry-file index.ios.js
+ --bundle-output ./ios/bundle/main.jsbundle
+ --assets-dest ./ios/bundle
+
+ scanning whether to delete unnecessary files.
+ have meta file & delete => ./ios/bundle/main.jsbundle.meta
+
+<<<< end bundle >>>>>>
+-------------------------------
+
+
+
+do script <react-native bundle>  >>>>>
+now time:>2019-07-22 13:28:43
+
+ parameter_1： ios
+ parameter_2： debug
+
+ doing ...
+ 
+ react-native bundle
+ --platform ios
+ --dev true
+ --entry-file index.ios.js
+ --bundle-output ./ios/bundle/main.jsbundle
+ --assets-dest ./ios/bundle
+
+ scanning whether to delete unnecessary files.
+ have meta file & delete => ./ios/bundle/main.jsbundle.meta
+
+<<<< end bundle >>>>>>
+-------------------------------
+
+
+
+do script <react-native bundle>  >>>>>
+now time:>2019-12-26 11:58:59
+
+ parameter_1： ios
+ parameter_2： debug
+
+ doing ...
+ 
+ react-native bundle
+ --platform ios
+ --dev true
+ --entry-file index.ios.js
+ --bundle-output ./ios/bundle/main.jsbundle
+ --assets-dest ./ios/bundle
+
+ scanning whether to delete unnecessary files.
+ have meta file & delete => ./ios/bundle/main.jsbundle.meta
+
+<<<< end bundle >>>>>>
+-------------------------------
+
+
+
+do script <react-native bundle>  >>>>>
+now time:>2019-12-26 11:59:49
+
+ parameter_1： ios
+ parameter_2： debug
+
+ doing ...
+ 
+ react-native bundle
+ --platform ios
+ --dev true
+ --entry-file index.ios.js
+ --bundle-output ./ios/bundle/main.jsbundle
+ --assets-dest ./ios/bundle
+
+ scanning whether to delete unnecessary files.
+ have meta file & delete => ./ios/bundle/main.jsbundle.meta
+
+<<<< end bundle >>>>>>
+-------------------------------
+
+
+
+do script <react-native bundle>  >>>>>
+now time:>2019-12-26 12:00:33
+
+ parameter_1： ios
+ parameter_2： debug
+
+ doing ...
+ 
+ react-native bundle
+ --platform ios
+ --dev true
+ --entry-file index.ios.js
+ --bundle-output ./ios/bundle/main.jsbundle
+ --assets-dest ./ios/bundle
+
+ scanning whether to delete unnecessary files.
+ have meta file & delete => ./ios/bundle/main.jsbundle.meta
+
+<<<< end bundle >>>>>>
+-------------------------------
+
+
+
+do script <react-native bundle>  >>>>>
+now time:>2019-12-26 12:01:03
+
+ parameter_1： ios
+ parameter_2： debug
+
+ doing ...
+ 
+ react-native bundle
+ --platform ios
+ --dev true
+ --entry-file index.ios.js
+ --bundle-output ./ios/bundle/main.jsbundle
+ --assets-dest ./ios/bundle
+
+ scanning whether to delete unnecessary files.
+ have meta file & delete => ./ios/bundle/main.jsbundle.meta
+
+<<<< end bundle >>>>>>
+-------------------------------
+
+
+
+do script <react-native bundle>  >>>>>
+now time:>2019-12-26 12:02:48
+
+ parameter_1： ios
+ parameter_2： debug
+
+ doing ...
+ 
+ react-native bundle
+ --platform ios
+ --dev true
+ --entry-file index.ios.js
+ --bundle-output ./ios/bundle/main.jsbundle
+ --assets-dest ./ios/bundle
+
+ scanning whether to delete unnecessary files.
+ have meta file & delete => ./ios/bundle/main.jsbundle.meta
+
+<<<< end bundle >>>>>>
+-------------------------------
+
+
+
+do script <react-native bundle>  >>>>>
+now time:>2019-12-26 19:10:59
+
+ parameter_1： ios
+ parameter_2： debug
+
+do script <react-native bundle>  >>>>>
+now time:>2019-12-26 19:12:46
+
+ parameter_1： ios
+ parameter_2： debug
+
+do script <react-native bundle>  >>>>>
+now time:>2019-12-26 19:19:10
+
+ parameter_1： ios
+ parameter_2： debug
+
+do script <react-native bundle>  >>>>>
+now time:>2019-12-26 19:27:38
+
+ parameter_1： ios
+ parameter_2： debug
+
+do script <react-native bundle>  >>>>>
+now time:>2019-12-26 19:31:21
+
+ parameter_1： ios
+ parameter_2： debug
+
+do script <react-native bundle>  >>>>>
+now time:>2019-12-26 19:33:17
+
+ parameter_1： ios
+ parameter_2： debug
+
+do script <react-native bundle>  >>>>>
+now time:>2019-12-26 19:36:38
+
+ parameter_1： ios
+ parameter_2： debug
+
+do script <react-native bundle>  >>>>>
+now time:>2019-12-27 10:06:59
+
+ parameter_1： ios
+ parameter_2： debug
+
+do script <react-native bundle>  >>>>>
+now time:>2019-12-27 17:41:16
+
+ parameter_1： ios
+ parameter_2： debug
+
+ doing ...
+ 
+ react-native bundle
+ --platform ios
+ --dev true
+ --entry-file index.ios.js
+ --bundle-output ./ios/bundle/main.jsbundle
+ --assets-dest ./ios/bundle
+
+ scanning whether to delete unnecessary files.
+ have meta file & delete => ./ios/bundle/main.jsbundle.meta
+
+<<<< end bundle >>>>>>
+-------------------------------
+
+
+
+do script <react-native bundle>  >>>>>
+now time:>2019-12-27 17:41:51
+
+ parameter_1： ios
+ parameter_2： debug
+
+ doing ...
+ 
+ react-native bundle
+ --platform ios
+ --dev true
+ --entry-file index.ios.js
+ --bundle-output ./ios/bundle/main.jsbundle
+ --assets-dest ./ios/bundle
+
+ scanning whether to delete unnecessary files.
+ have meta file & delete => ./ios/bundle/main.jsbundle.meta
+
+<<<< end bundle >>>>>>
+-------------------------------
+
+
+
+do script <react-native bundle>  >>>>>
+now time:>2019-12-27 17:44:07
+
+ parameter_1： ios
+ parameter_2： debug
+
+ doing ...
+ 
+ react-native bundle
+ --platform ios
+ --dev true
+ --entry-file index.ios.js
+ --bundle-output ./ios/bundle/main.jsbundle
+ --assets-dest ./ios/bundle
+
+ scanning whether to delete unnecessary files.
+ have meta file & delete => ./ios/bundle/main.jsbundle.meta
+
+<<<< end bundle >>>>>>
+-------------------------------
+
+
+
+do script <react-native bundle>  >>>>>
+now time:>2019-12-27 18:09:09
+
+ parameter_1： ios
+ parameter_2： debug
+
+ doing ...
+ 
+ react-native bundle
+ --platform ios
+ --dev true
+ --entry-file index.ios.js
+ --bundle-output ./ios/bundle/main.jsbundle
+ --assets-dest ./ios/bundle
+
+ scanning whether to delete unnecessary files.
+ have meta file & delete => ./ios/bundle/main.jsbundle.meta
+
+<<<< end bundle >>>>>>
+-------------------------------
+
+
+
+do script <react-native bundle>  >>>>>
+now time:>2019-12-27 18:15:49
+
+ parameter_1： ios
+ parameter_2： debug
+
+ doing ...
+ 
+ react-native bundle
+ --platform ios
+ --dev true
+ --entry-file index.ios.js
+ --bundle-output ./ios/bundle/main.jsbundle
+ --assets-dest ./ios/bundle
+
+ scanning whether to delete unnecessary files.
+ have meta file & delete => ./ios/bundle/main.jsbundle.meta
+
+<<<< end bundle >>>>>>
+-------------------------------
+
+
+
+do script <react-native bundle>  >>>>>
+now time:>2019-12-30 10:43:17
+
+ parameter_1： ios
+ parameter_2： debug
+
+ doing ...
+ 
+ react-native bundle
+ --platform ios
+ --dev true
+ --entry-file index.ios.js
+ --bundle-output ./ios/bundle/main.jsbundle
+ --assets-dest ./ios/bundle
+
+ scanning whether to delete unnecessary files.
+
+<<<< end bundle >>>>>>
+-------------------------------
+
+
+
+do script <react-native bundle>  >>>>>
+now time:>2019-12-30 10:51:41
+
+ parameter_1： ios
+ parameter_2： debug
+
+ doing ...
+ 
+ react-native bundle
+ --platform ios
+ --dev true
+ --entry-file index.ios.js
+ --bundle-output ./ios/bundle/main.jsbundle
+ --assets-dest ./ios/bundle
+
+ scanning whether to delete unnecessary files.
+
+<<<< end bundle >>>>>>
+-------------------------------
+
+
+
+do script <react-native bundle>  >>>>>
+now time:>2019-12-30 10:52:42
+
+ parameter_1： ios
+ parameter_2： debug
+
+ doing ...
+ 
+ react-native bundle
+ --platform ios
+ --dev true
+ --entry-file index.ios.js
+ --bundle-output ./ios/bundle/main.jsbundle
+ --assets-dest ./ios/bundle
+
+ scanning whether to delete unnecessary files.
+
+<<<< end bundle >>>>>>
+-------------------------------
+
+
