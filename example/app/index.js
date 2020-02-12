@@ -156,11 +156,14 @@ const styles = StyleSheet.create({
   nomalTextInput: {
     fontSize: 14,
     color: 'red',
+    height: 30,
+    lineHeight: 30,
     backgroundColor: 'white',
   },
   borTextInput: {
     margin:5,
     height: 30,
+    lineHeight: 30,
     borderWidth: 1,
     borderColor: '#9400D3',
     paddingLeft: 5,
