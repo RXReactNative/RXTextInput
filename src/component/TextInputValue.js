@@ -154,6 +154,7 @@ export default class TextInputValue extends Component {
       case ValidationType.TypeEngineNo:
       case ValidationType.TypeRegistrationNo:
       case ValidationType.TypeCaptcha:
+      case ValidationType.TypeGraphCaptcha:
       case ValidationType.TypeIdCardNo:
         return TextFormatUtil.formatSpace(value);
       case ValidationType.TypePhone:
@@ -213,9 +214,9 @@ export default class TextInputValue extends Component {
           text = TextFormatUtil.formatAmount(text);
           return text;
       case ValidationType.TypePhone:
-      case 'number':
-        return text.replace(/[^\d.\s]+/, '');
       case ValidationType.TypeCaptcha:
+      case 'number':
+        return text.replace(/[^0-9]/ig, '');
       case ValidationType.TypeGraphCaptcha:
       case ValidationType.TypeVIN:
       case ValidationType.TypeBankCard:
@@ -236,8 +237,8 @@ export default class TextInputValue extends Component {
     if(type && (type === ValidationType.TypePlateNo
        || type === ValidationType.TypeEngineNo
        || type === ValidationType.TypeVIN
+       || type === ValidationType.TypeGraphCaptcha
        || type === ValidationType.TypeIdCardNo
-       || type === ValidationType.TypeBankCard
        || type === ValidationType.TypeRegistrationNo)) {
       var value = this.state.value;
       if(value) {

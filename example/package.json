@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "node node_modules/jest/bin/jest.js --watch",
+    "dev": "npm run web-build-dev-server",
     "flow": "flow; test $? -eq 0 -o $? -eq 2",
     "clearFolder": "node ./script/web/rm-docs.js",
     "mvToPreFolder": "node ./script/web/mv-docs.js",
@@ -19,7 +20,7 @@
     "react-dom": "16.11.0",
     "react-native": "0.62.2",
     "react-native-rxinput": "^0.0.2",
-    "react-native-web": "^0.12.1"
+    "react-native-web": "^0.12.2"
   },
   "devDependencies": {
     "babel": "6.23.0",

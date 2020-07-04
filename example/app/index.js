@@ -62,12 +62,6 @@ export default class RXInputDemo extends Component {
           />
           <View style={styles.line} />
           <RXInput
-            type='float'
-            style={styles.borTextInput}
-            placeholder={'type=float "数字键盘 - 浮点型(最多保留2位小数)"'}
-          />
-          <View style={styles.line} />
-          <RXInput
             type='phone'
             style={styles.borTextInput}
             placeholder={'请输入手机号'}
@@ -86,18 +80,24 @@ export default class RXInputDemo extends Component {
             returnKeyType={'done'}
           />
           <View style={styles.line} />
-          <View style={styles.line} />
-          <Text style={styles.tip}>{"下面验证需要处理"}</Text>
           <RXInput
             type={'idCardNo'}
             style={styles.borTextInput}
-            placeholder={'请输入身份证号码, 字母在键盘消失后 `不能`自动大写'}
+            placeholder={'请输入身份证号码'}
           />
           <View style={styles.line} />
           <RXInput
             type={'captcha'}
             style={styles.borTextInput}
-            placeholder={'请输入验证码 `字母+数字` 不应该出现`.-`'}
+            placeholder={'请输入验证码 `仅数字`'}
+          />
+          <View style={styles.line} />
+          <View style={styles.line} />
+          <Text style={styles.tip}>{"下面验证需要处理"}</Text>
+          <RXInput
+            type='float'
+            style={styles.borTextInput}
+            placeholder={'type=float "数字键盘 - 浮点型(最多保留2位小数)"'}
           />
           <View style={styles.line} />
           <RXInput
