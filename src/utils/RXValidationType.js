@@ -1,6 +1,6 @@
 /**
  * @this 验证类型
- * 
+ *
  * @flow
  */
 
@@ -8,7 +8,7 @@
 
 const ValidationType = {
   TypeEmpty: 'empty',      //1-空
-  TypePhone: 'phone',      //2-手机号 
+  TypePhone: 'phone',      //2-手机号
   TypeAmount: 'amount',    //3-金额数   1,200、1,200,230
   TypePlateNo: 'plateNo',  //4-校验车牌号
   TypeCaptcha: 'captcha',  //5-验证码

@@ -1,10 +1,10 @@
 /**
- * 
+ *
  * @this TextInputPlaceholder: 封装input的 placeholder
- * 
+ *
  * @flow
  * -------
-   涉及到 < 桥接原生的 TextInput > 的 placeholderFontSize 、 placeholderStyle 
+   涉及到 < 桥接原生的 TextInput > 的 placeholderFontSize 、 placeholderStyle
    请使用 封装的<TextInputPlaceholder>
  *
  */
@@ -110,7 +110,7 @@ class TextInputPlaceholder extends Component {
     const { value, onEndEditing } = this.props;
     let placeholderShow = !this._isHaveText(value);
     this.setState({ placeholderShow })
-    onEndEditing && onEndEditing(); 
+    onEndEditing && onEndEditing();
   }
 
   onChange = (text) => {
@@ -148,7 +148,7 @@ class TextInputPlaceholder extends Component {
   _getText = (text) => {
     return text;
   }
-  
+
   // style提取 并拆包，分离后在打包
   _getStyleData = (style, inputStyle) => {
     if(! style) return { style: {}, inputStyle: {} };
@@ -236,7 +236,7 @@ class TextInputPlaceholder extends Component {
     const { placeholder, placeholderColor, multiline, numberOfLines, valueSize, ...other } = this.props;
     const { placeholderFontSize, placeholderShow } = this.state;
     let {style, inputStyle} = this._getStyle(this.props.style);
-    const placeholder_style = this._getStyle(this.props.placeholderStyle); 
+    const placeholder_style = this._getStyle(this.props.placeholderStyle);
     const placeholderStyle = placeholder_style.style;
     const inputPlaceholderStyle = placeholder_style.inputStyle;
     const placeholderViewStyle = this.getPlaceholderFrame();
@@ -247,10 +247,10 @@ class TextInputPlaceholder extends Component {
 
     return(
       <View style={[{justifyContent: 'center'}, style]}>
-        <TextInputValue 
-          {...other} 
+        <TextInputValue
+          {...other}
           key={'cd_text_input_0'}
-          style={[{flex: 1}, styles.input, inputStyle]} 
+          style={[{flex: 1}, styles.input, inputStyle]}
           ref={(e)=>this.refTextInputValue = e}
           placeholder={''}
           multiline={multiline}
@@ -273,22 +273,22 @@ class TextInputPlaceholder extends Component {
             <TouchableOpacity
               activeOpacity={1}
               style={[
-                styles.placeholder, 
-                placeholderViewStyle, 
+                styles.placeholder,
+                placeholderViewStyle,
                 placeholderStyle
               ]}
               key={'cd_text_input_1'}
               pointerEvents={'box-only'}
-              onPress={()=>{ 
-                this._textGetFocus() 
+              onPress={()=>{
+                this._textGetFocus()
               }}
             >
-                <TextInput 
+                <TextInput
                   key={'cd_text_input_2'}
                   pointerEvents={'none'}
                   style={[
-                      {flex: 1},styles.input, inputStyle, 
-                      {fontSize: placeholderFontSize, color: placeholderColor}, 
+                      {flex: 1},styles.input, inputStyle,
+                      {fontSize: placeholderFontSize, color: placeholderColor},
                       inputPlaceholderStyle ]}
                   defaultValue={placeholder}
                   editable={false}
@@ -306,14 +306,14 @@ class TextInputPlaceholder extends Component {
                   pointerEvents={'none'}
                   key={'cd_text_input_2'}
                   style={[
-                    {flex: 1},styles.input, inputStyle, 
-                    {fontSize: placeholderFontSize, color: placeholderColor},  
+                    {flex: 1},styles.input, inputStyle,
+                    {fontSize: placeholderFontSize, color: placeholderColor},
                     inputPlaceholderStyle ]}
                   numberOfLines={numberOfLines}
                 >{placeholder}</Text> */}
-          
+
             </TouchableOpacity>
-         :null 
+         :null
         }
       </View>
     )

@@ -1,18 +1,18 @@
 /**
- * 
+ *
  * @this TextInputValue: 封装TextInput的 value
- * 
+ *
  * @flow
  * ----------------------------
- * 
+ *
  * @当前使用的版本
     "react": "16.8.3",
     "react-native": "0.59.10",
     "react-native-web": "^0.10.0-alpha.2",
- * 
+ *
  * @采坑
  * 1、onlayout 不可用
- * 
+ *
  * 2、Android上 TextInput的封装大写的转换： 只能在失去焦点后，在转大写的处理
  *   相关版本分布: （请看下面）
  * ```config
@@ -38,7 +38,7 @@
  *````
  *
  * 3、 placeholder 和  value 交替的显示问题，以后优化。(TextInput 输入时，显示的那几秒和placeholder重叠)
- * 
+ *
  * 4、TextInput multiline=true 多行，内容垂直居中。
  *    web 不支持 多行输入，再一行，在多行，并保持垂直居中：
  * ```code
@@ -58,18 +58,18 @@
     }}
 
     multiline={PlatformUtil.isWeb()?false:true}
- *````    
+ *````
 
     textAlignVertical (1): 支持RN -> RN_version >=0.60.0、android
                       (2): 不支持web,写了不会报错
-    @引用 
+    @引用
     textAlignVertical:
       https://github.com/necolas/react-native-web/issues/1397
- * 
- * 
+ *
+ *
 -------------------------------------------------------------------------------
- * 
- * 
+ *
+ *
  */
 'use strict'
 import React, { Component } from 'react';
@@ -125,7 +125,7 @@ export default class TextInputValue extends Component {
     }
 
     var valueSize = nextProps.valueSize;
-    if(!nextProps.value || nextProps.placeholder === nextProps.value) {
+    if (!nextProps.value || nextProps.placeholder === nextProps.value) {
       valueSize = nextProps.placeholderFontSize;
     }
     this.setState({ valueSize })
@@ -137,8 +137,8 @@ export default class TextInputValue extends Component {
         return TextFormatUtil.phone(value);
       case ValidationType.TypeBankCard:
         return TextFormatUtil.bankId(value);
-      case ValidationType.TypeAmount:    
-        return TextFormatUtil.amount(value);    
+      case ValidationType.TypeAmount:
+        return TextFormatUtil.amount(value);
       default:
         return value;
     }
@@ -154,14 +154,13 @@ export default class TextInputValue extends Component {
       case ValidationType.TypeEngineNo:
       case ValidationType.TypeRegistrationNo:
       case ValidationType.TypeCaptcha:
-      case ValidationType.TypeGraphCaptcha:
       case ValidationType.TypeIdCardNo:
         return TextFormatUtil.formatSpace(value);
       case ValidationType.TypePhone:
       case ValidationType.TypeBankCard:
-          return TextFormatUtil.retainNumbers(value)
+        return TextFormatUtil.retainNumbers(value)
       case ValidationType.TypeAmount:
-          return TextFormatUtil.formatAmount(value);
+        return TextFormatUtil.formatAmount(value);
       default:
         return value;
     }
@@ -172,15 +171,15 @@ export default class TextInputValue extends Component {
     var value = this.formatSpace(this.filterPureNumber(event.nativeEvent.text));
 
     let that = this;
-    if(value !== that.props.value) {
+    if (value !== that.props.value) {
       onChange && onChange(value);
     }
-    
+
     value = that.formatValue(type, value);
     var maxLength = this.props.maxLength;
-    if(type === ValidationType.TypeAmount) {
+    if (type === ValidationType.TypeAmount) {
       let decimalLocal = value.indexOf(".");
-      if(decimalLocal > 0) {
+      if (decimalLocal > 0) {
         maxLength = decimalLocal + 3
       }
     }
@@ -196,7 +195,7 @@ export default class TextInputValue extends Component {
   onChangeText = (text) => {
     const { type, onChangeText } = this.props;
     var value = this.formatSpace(this.filterPureNumber(text));
-    if(value !== this.props.value) {
+    if (value !== this.props.value) {
       onChangeText && onChangeText(value);
     }
   }
@@ -206,26 +205,26 @@ export default class TextInputValue extends Component {
     switch (type) {
       case 'int':
         text = text.replace(/[^\d]+/, '') || '';
-        if(text.length) {
+        if (text.length) {
           text = parseInt(text);
         }
         return text;
       case 'float':
-          text = TextFormatUtil.formatAmount(text);
-          return text;
+        text = TextFormatUtil.formatAmount(text);
+        return text;
       case ValidationType.TypePhone:
       case ValidationType.TypeCaptcha:
-      case 'number':
-        return text.replace(/[^0-9]/ig, '');
       case ValidationType.TypeGraphCaptcha:
+      case 'number':
+        return text.replace(/[^\d.\s]+/, '');
       case ValidationType.TypeVIN:
       case ValidationType.TypeBankCard:
       case ValidationType.TypeIdCardNo:
-          text = text.replace(/[^\d|^a-zA-Z]/g, '');
+        text = text.replace(/[^\d|^a-zA-Z]/g, '');
         return text;
-      case ValidationType.TypePlateNo: 
-      case ValidationType.TypeEngineNo: 
-      case ValidationType.TypeRegistrationNo: 
+      case ValidationType.TypePlateNo:
+      case ValidationType.TypeEngineNo:
+      case ValidationType.TypeRegistrationNo:
       case ValidationType.TypeEmail:
       default:
         return text;
@@ -234,27 +233,25 @@ export default class TextInputValue extends Component {
 
   _onBlur = () => {
     const { type, onChange } = this.props;
-    if(type && (type === ValidationType.TypePlateNo
-       || type === ValidationType.TypeEngineNo
-       || type === ValidationType.TypeVIN
-       || type === ValidationType.TypeGraphCaptcha
-       || type === ValidationType.TypeIdCardNo
-       || type === ValidationType.TypeRegistrationNo)) {
+    if (type && (type === ValidationType.TypePlateNo
+      || type === ValidationType.TypeEngineNo
+      || type === ValidationType.TypeVIN
+      || type === ValidationType.TypeRegistrationNo)) {
       var value = this.state.value;
-      if(value) {
+      if (value) {
         value = value.toLocaleUpperCase();
         onChange && onChange(value);
         this.setState({ value });
       }
     }
 
-    if(this.props.onBlur) {
+    if (this.props.onBlur) {
       this.props.onBlur();
     }
   }
 
   focus = () => {
-    if(this.props.enable) {
+    if (this.props.enable) {
       this.refTextInputValue && this.refTextInputValue.focus();
     }
   }
@@ -277,69 +274,69 @@ export default class TextInputValue extends Component {
 
   render() {
     let { style, type, keyboardType, placeholderFontSize, placeholder, secureTextEntry, ...other } = this.props;
-    let {maxLength} = this.state;
+    let { maxLength } = this.state;
     switch (type) {
       case ValidationType.TypeBankCard:
-        if(typeof keyboardType === 'undefined') keyboardType = 'numeric';
-        if(typeof maxLength === 'undefined') maxLength = 23;
+        if (typeof keyboardType === 'undefined') keyboardType = 'numeric';
+        if (typeof maxLength === 'undefined') maxLength = 23;
         break;
       case ValidationType.TypePhone:
-        if(keyboardType === undefined) keyboardType = 'phone-pad';
-        if(maxLength === undefined) maxLength = 13;
+        if (keyboardType === undefined) keyboardType = 'phone-pad';
+        if (maxLength === undefined) maxLength = 13;
         break;
       case ValidationType.TypeAmount:
-          //金额8位 + 2个逗号 + 1个小数点 + 小数位2位 = 13 (会在输入的时候变为13)
-          if(keyboardType === undefined) keyboardType = 'numeric';
-          if(maxLength === undefined) {
-            maxLength = 10; // 10位是 = 金额8位 + 2个逗号。 预留1个小数的位置
-          }
-          break;
+        //金额8位 + 2个逗号 + 1个小数点 + 小数位2位 = 13 (会在输入的时候变为13)
+        if (keyboardType === undefined) keyboardType = 'numeric';
+        if (maxLength === undefined) {
+          maxLength = 10; // 10位是 = 金额8位 + 2个逗号。 预留1个小数的位置
+        }
+        break;
       case ValidationType.TypeCaptcha:
-        if(keyboardType === undefined) keyboardType = 'numeric';
-        if(maxLength === undefined) maxLength = 6;
+        if (keyboardType === undefined) keyboardType = 'numeric';
+        if (maxLength === undefined) maxLength = 6;
         break;
       case ValidationType.TypeGraphCaptcha:
-        if(keyboardType === undefined) keyboardType = 'numeric';
-        if(maxLength === undefined) maxLength = 4;
+        if (keyboardType === undefined) keyboardType = 'numeric';
+        if (maxLength === undefined) maxLength = 4;
         break;
       case 'number':
       case 'int':
       case 'float':
-        if(keyboardType === undefined) keyboardType = 'numeric';
+        if (keyboardType === undefined) keyboardType = 'numeric';
         break;
       case ValidationType.TypeEmail:
-        if(keyboardType === undefined) keyboardType = 'email-address';
+        if (keyboardType === undefined) keyboardType = 'email-address';
         break;
       case ValidationType.TypePlateNo:
-        if(keyboardType === undefined) keyboardType = 'email-address';
-        if(maxLength === undefined) maxLength = 8;
+        if (keyboardType === undefined) keyboardType = 'email-address';
+        if (maxLength === undefined) maxLength = 8;
         break;
       case ValidationType.TypeEngineNo:
-        if(keyboardType === undefined) keyboardType = 'email-address';
-        if(maxLength === undefined) maxLength = 20;
+        if (keyboardType === undefined) keyboardType = 'email-address';
+        if (maxLength === undefined) maxLength = 20;
         break;
       case ValidationType.TypeRegistrationNo:
-        if(keyboardType === undefined) keyboardType = 'email-address';
-        if(maxLength === undefined) maxLength = 20;
+        if (keyboardType === undefined) keyboardType = 'email-address';
+        if (maxLength === undefined) maxLength = 20;
         break;
       case ValidationType.TypeVIN:
-        if(keyboardType === undefined) keyboardType = 'email-address';
-        if(maxLength === undefined) maxLength = 17;
+        if (keyboardType === undefined) keyboardType = 'email-address';
+        if (maxLength === undefined) maxLength = 17;
         break;
       case ValidationType.TypeIdCardNo:
-        if(keyboardType === undefined) keyboardType = 'email-address';
-        if(maxLength === undefined) maxLength = 18;
+        if (keyboardType === undefined) keyboardType = 'email-address';
+        if (maxLength === undefined) maxLength = 18;
         break;
       default:
         break;
     }
 
-    if(this.state.valueSize > 0 && Platform.OS === 'web') {
+    if (this.state.valueSize > 0 && Platform.OS === 'web') {
       style = [{ fontSize: this.state.valueSize }].concat(style);
     }
 
     var must_ps = secureTextEntry;
-    if(!secureTextEntry) {
+    if (!secureTextEntry) {
       must_ps = type === 'password';
     }
 
@@ -349,7 +346,7 @@ export default class TextInputValue extends Component {
     // console.log('TextInputValue maxLength='+ maxLength);
     let input = <TextInput
       {...other}
-      ref={(e)=>{this.refTextInputValue = e;}}
+      ref={(e) => { this.refTextInputValue = e; }}
       style={[styles.container, style]}
       maxLength={maxLength}
       keyboardType={keyboardType}
@@ -362,23 +359,23 @@ export default class TextInputValue extends Component {
       onChangeText={this.onChangeText}
       allowFontScaling={false}
 
-      onFocus={()=>{
-        if(this.props.onFocus) {
+      onFocus={() => {
+        if (this.props.onFocus) {
           this.props.onFocus();
         }
-      }}  
+      }}
 
-      onBlur ={this._onBlur}
+      onBlur={this._onBlur}
 
-      onLayout={(event)=>{
-        if(this.props.onLayout) {
+      onLayout={(event) => {
+        if (this.props.onLayout) {
           this.props.onLayout(event);
         }
       }}
     />
 
     var element = input;
-    if((Platform.OS === 'android')) {
+    if ((Platform.OS === 'android')) {
       element = React.cloneElement(input, {
         underlineColorAndroid: 'transparent'
       });
