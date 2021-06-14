@@ -3,13 +3,13 @@
  *
  * author : srxboys
  * @flow  : 用于 静态语法检查
- * 
+ *
  * -------------------------------------------
- * 该项目 ： 主要 - 提供思路 
- * 
- * 
+ * 该项目 ： 主要 - 提供思路
+ *
+ *
  * -------------------------------------------
- * 
+ *
 **/
 
 'use strict'
@@ -24,7 +24,7 @@ import {
 import RXInput from 'react-native-rxinput'
 
 export default class RXInputDemo extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = ({
 
@@ -32,7 +32,7 @@ export default class RXInputDemo extends Component {
   }
 
   render() {
-    return(
+    return (
       <ScrollView style={styles.container}>
         <Text style={styles.tip}>{"react-native-rxinput"}</Text>
         <View style={styles.contentView}>
@@ -42,7 +42,7 @@ export default class RXInputDemo extends Component {
           />
           <View style={styles.line} />
           <RXInput
-            style={[styles.nomalTextInput, {textAlign: 'right'}]}
+            style={[styles.nomalTextInput, { textAlign: 'right' }]}
             placeholder={'type=text style="textAlign: right"'}
           />
           <View style={styles.line} />
@@ -64,32 +64,32 @@ export default class RXInputDemo extends Component {
           <RXInput
             type='phone'
             style={styles.borTextInput}
-            placeholder={'请输入手机号'}
+            placeholder={'type=phone 请输入手机号'}
           />
           <View style={styles.line} />
           <RXInput
             type='VIN'
             style={styles.borTextInput}
-            placeholder={'请输入车架号, 字母在键盘消失后 自动大写'}
+            placeholder={'type=VIN 请输入车架号, 字母在键盘消失后 自动大写'}
           />
           <View style={styles.line} />
           <RXInput
             type={'password'}
             style={styles.borTextInput}
-            placeholder={'请输入密码'}
+            placeholder={'type=password 请输入密码'}
             returnKeyType={'done'}
           />
           <View style={styles.line} />
           <RXInput
             type={'idCardNo'}
             style={styles.borTextInput}
-            placeholder={'请输入身份证号码'}
+            placeholder={'type=idCardNo 请输入身份证号码'}
           />
           <View style={styles.line} />
           <RXInput
             type={'captcha'}
             style={styles.borTextInput}
-            placeholder={'请输入验证码 `仅数字`'}
+            placeholder={'type=captcha 请输入验证码 `仅数字`'}
           />
           <View style={styles.line} />
           <View style={styles.line} />
@@ -103,7 +103,7 @@ export default class RXInputDemo extends Component {
           <RXInput
             type={'graphCaptcha'}
             style={styles.borTextInput}
-            placeholder={'请输入校验图形验证码 `字母+数字` 不应该出现`.-`'}
+            placeholder={'type=graphCaptcha 请输入校验图形验证码 `字母+数字` 不应该出现`.-`'}
           />
           <View style={styles.line} />
           <RXInput
@@ -116,13 +116,13 @@ export default class RXInputDemo extends Component {
           <RXInput
             type='bankCard'
             style={styles.borTextInput}
-            placeholder={'请输入银行卡号, `自动加空格，位数`'}
+            placeholder={'type=bankCard 请输入银行卡号, `自动加空格，位数`'}
           />
           <View style={styles.line} />
           <RXInput
             type='amount'
             style={styles.borTextInput}
-            placeholder={'请输入金额, `位数`'}
+            placeholder={'type=amount 请输入金额, `位数`'}
           />
           <View style={styles.line} />
         </View>
@@ -132,15 +132,15 @@ export default class RXInputDemo extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: { 
+  container: {
     padding: 0,
     marginVertical: 0,
-    marginHorizontal: 40,  
+    marginHorizontal: 40,
     backgroundColor: 'gray',
   },
   tip: {
     paddingVertical: 20,
-    fontSize: 24, 
+    fontSize: 24,
     color: 'blue',
     lineHeight: 30,
     textAlign: 'center',
@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   borTextInput: {
-    margin:5,
+    margin: 5,
     height: 30,
     lineHeight: 30,
     borderWidth: 1,
