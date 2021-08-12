@@ -40,17 +40,17 @@ class TextInputPlaceholder extends Component {
     this.state = {
       placeholderFontSize: this.props.placeholderFontSize,
       placeholderShow,
-      inputStyleFrame: {x: 0, y: 0, width: 0, height: 0},
-      placeholderStyleSize: {width: 0, height: 0},
+      inputStyleFrame: { x: 0, y: 0, width: 0, height: 0 },
+      placeholderStyleSize: { width: 0, height: 0 },
     }
   }
 
   componentWillReceiveProps(nextProps) {
-    const { style, placeholderFontSize, value} = nextProps;
+    const { style, placeholderFontSize, value } = nextProps;
     let thisplaceholderFontSize = this.state.placeholderFontSize;
-    if(thisplaceholderFontSize != placeholderFontSize) {
-      if(!placeholderFontSize) {
-        let fontSize = style?style.fontSize:0;
+    if (thisplaceholderFontSize != placeholderFontSize) {
+      if (!placeholderFontSize) {
+        let fontSize = style ? style.fontSize : 0;
         thisplaceholderFontSize = fontSize | 16;
       }
       else {
@@ -58,7 +58,7 @@ class TextInputPlaceholder extends Component {
       }
     }
     let placeholderShow = !this._isHaveText(value);
-    this.setState({placeholderShow, placeholderFontSize: thisplaceholderFontSize})
+    this.setState({ placeholderShow, placeholderFontSize: thisplaceholderFontSize })
   }
 
   componentWillUnmount() {
@@ -82,7 +82,7 @@ class TextInputPlaceholder extends Component {
   }
 
   _textGetFocus = () => {
-    if(this.isFocused()) return;
+    if (this.isFocused()) return;
     this.focus();
   }
 
@@ -131,17 +131,17 @@ class TextInputPlaceholder extends Component {
 
   _isHaveText = (text) => {
     const { placeholder } = this.props;
-    if(!placeholder) return true;
-    if(!text) {
-      if(typeof text === 'number') {
+    if (!placeholder) return true;
+    if (!text) {
+      if (typeof text === 'number') {
         text = text.toString();
       }
       else {
         return false;
       }
     }
-    if(text === placeholder) return false;
-    if(text.length < 1) return false;
+    if (text === placeholder) return false;
+    if (text.length < 1) return false;
     return true;
   }
 
@@ -151,7 +151,7 @@ class TextInputPlaceholder extends Component {
 
   // style提取 并拆包，分离后在打包
   _getStyleData = (style, inputStyle) => {
-    if(! style) return { style: {}, inputStyle: {} };
+    if (!style) return { style: {}, inputStyle: {} };
     let keys = [
       'textShadowOffset',
       'textShadowColor',
@@ -172,36 +172,36 @@ class TextInputPlaceholder extends Component {
       'textTransform',
       'writingDirection',
     ]
-    for (let i=0; i<keys.length; i++) {
+    for (let i = 0; i < keys.length; i++) {
       let key = keys[i];
-      if(!key) continue;
+      if (!key) continue;
       let value = style[key];
-      if(value) {
+      if (value) {
         inputStyle[key] = value;
       }
     }
 
     var temp_style = {};
-    for(let key in style) {
-      if(!key) continue;
+    for (let key in style) {
+      if (!key) continue;
       let value = style[key];
-      if(value && !inputStyle[key]) {
-        temp_style[key]=value;
+      if (value && !inputStyle[key]) {
+        temp_style[key] = value;
       }
     }
-    return {style: temp_style, inputStyle };
+    return { style: temp_style, inputStyle };
   }
 
   _getStyle = (style) => {
-    if(! style) return { style: {}, inputStyle: {} };
+    if (!style) return { style: {}, inputStyle: {} };
     var inputStyle = {};
-    var newStyle= {};
-    var newDict = {'style': newStyle, inputStyle}
-    if(Array.isArray(style) && style.length && style.length > 0) {
-      for(let i=0; i < style.length; i++) {
+    var newStyle = {};
+    var newDict = { 'style': newStyle, inputStyle }
+    if (Array.isArray(style) && style.length && style.length > 0) {
+      for (let i = 0; i < style.length; i++) {
         let tempStyle = style[i];
-        if(!tempStyle) continue;
-        if(typeof tempStyle === 'number') {
+        if (!tempStyle) continue;
+        if (typeof tempStyle === 'number') {
           //StyleSheet ，暂不支持 拆分出 TextInput的属性
           newStyle = tempStyle;
         }
@@ -209,12 +209,12 @@ class TextInputPlaceholder extends Component {
           var newDict = this._getStyleData(tempStyle, inputStyle);
           let new_temp_style = newDict.style;
           for (var key in new_temp_style) {
-            newStyle[key]=new_temp_style[key];
+            newStyle[key] = new_temp_style[key];
           }
 
           let temp_inputStyle = newDict.inputStyle;
           for (let key in temp_inputStyle) {
-            inputStyle[key]=temp_inputStyle[key];
+            inputStyle[key] = temp_inputStyle[key];
           }
         }
       }
@@ -224,10 +224,10 @@ class TextInputPlaceholder extends Component {
       newStyle = newDict.style;
       inputStyle = newDict.inputStyle;
     }
-    return {style: newStyle, inputStyle };
+    return { style: newStyle, inputStyle };
   }
 
-  getPlaceholderFrame () {
+  getPlaceholderFrame() {
     // @require 需要子类去实现
     console.warn('not implemented yet');
   }
@@ -235,37 +235,37 @@ class TextInputPlaceholder extends Component {
   render() {
     const { placeholder, placeholderColor, multiline, numberOfLines, valueSize, ...other } = this.props;
     const { placeholderFontSize, placeholderShow } = this.state;
-    let {style, inputStyle} = this._getStyle(this.props.style);
+    let { style, inputStyle } = this._getStyle(this.props.style);
     const placeholder_style = this._getStyle(this.props.placeholderStyle);
     const placeholderStyle = placeholder_style.style;
     const inputPlaceholderStyle = placeholder_style.inputStyle;
     const placeholderViewStyle = this.getPlaceholderFrame();
 
-    if(valueSize>0) {
+    if (valueSize > 0) {
       inputStyle['fontSize'] = valueSize;
     }
 
-    return(
-      <View style={[{justifyContent: 'center'}, style]}>
+    return (
+      <View style={[{ justifyContent: 'center' }, style]}>
         <TextInputValue
           {...other}
           key={'cd_text_input_0'}
-          style={[{flex: 1}, styles.input, inputStyle]}
-          ref={(e)=>this.refTextInputValue = e}
+          style={[{ flex: 1 }, styles.input, inputStyle]}
+          ref={(e) => this.refTextInputValue = e}
           placeholder={''}
           multiline={multiline}
           numberOfLines={numberOfLines}
-          onFocus={(e)=>{this._onFocus(e)}}
-          onBlur={()=>{this._onBlur()}}
-          onEndEditing={()=>{this._onEndEditing()}}
-          onKeyPress={()=>{this._onKeyPress()}}
-          onLayout={(event)=>{
+          onFocus={(e) => { this._onFocus(e) }}
+          onBlur={() => { this._onBlur() }}
+          onEndEditing={() => { this._onEndEditing() }}
+          onKeyPress={() => { this._onKeyPress() }}
+          onLayout={(event) => {
             let x = Math.ceil(event.nativeEvent.layout.x);
             let y = Math.ceil(event.nativeEvent.layout.y);
             let height = Math.ceil(event.nativeEvent.layout.height);
             let width = Math.ceil(event.nativeEvent.layout.width);
-            let inputStyleFrame = {x, y, width, height};
-            this.setState({inputStyleFrame})
+            let inputStyleFrame = { x, y, width, height };
+            this.setState({ inputStyleFrame })
           }}
         />
         {
@@ -279,30 +279,30 @@ class TextInputPlaceholder extends Component {
               ]}
               key={'cd_text_input_1'}
               pointerEvents={'box-only'}
-              onPress={()=>{
+              onPress={() => {
                 this._textGetFocus()
               }}
             >
-                <TextInput
-                  key={'cd_text_input_2'}
-                  pointerEvents={'none'}
-                  style={[
-                      {flex: 1},styles.input, inputStyle,
-                      {fontSize: placeholderFontSize, color: placeholderColor},
-                      inputPlaceholderStyle ]}
-                  defaultValue={placeholder}
-                  editable={false}
-                  multiline={multiline}
-                  numberOfLines={numberOfLines}
-                  onLayout={(event)=>{
-                    let height = Math.ceil(event.nativeEvent.layout.height);
-                    let width = Math.ceil(event.nativeEvent.layout.width);
-                    let placeholderStyleSize = {width, height};
-                    this.setState({placeholderStyleSize})
-                  }}
-                />
-                {/* 这两个控件用哪个都行 */}
-                {/* <Text
+              <TextInput
+                key={'cd_text_input_2'}
+                pointerEvents={'none'}
+                style={[
+                  { flex: 1 }, styles.input, inputStyle,
+                  { fontSize: placeholderFontSize, color: placeholderColor },
+                  inputPlaceholderStyle]}
+                defaultValue={placeholder}
+                editable={false}
+                multiline={multiline}
+                numberOfLines={numberOfLines}
+                onLayout={(event) => {
+                  let height = Math.ceil(event.nativeEvent.layout.height);
+                  let width = Math.ceil(event.nativeEvent.layout.width);
+                  let placeholderStyleSize = { width, height };
+                  this.setState({ placeholderStyleSize })
+                }}
+              />
+              {/* 这两个控件用哪个都行 */}
+              {/* <Text
                   pointerEvents={'none'}
                   key={'cd_text_input_2'}
                   style={[
@@ -313,7 +313,7 @@ class TextInputPlaceholder extends Component {
                 >{placeholder}</Text> */}
 
             </TouchableOpacity>
-         :null
+            : null
         }
       </View>
     )

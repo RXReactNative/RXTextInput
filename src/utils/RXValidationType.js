@@ -18,7 +18,7 @@ const ValidationType = {
   TypeEmail: 'email',      //9-邮箱
   TypeGraphCaptcha: 'graphCaptcha',    //10-校验图形验证码
 
-  AllTypes: function() {
+  AllTypes: function () {
     return [
       this.TypeVIN,
       this.TypeEmail,
@@ -32,5 +32,5 @@ const ValidationType = {
       this.TypeGraphCaptcha,
     ]
   },
- }
- export default ValidationType;
+}
+export default ValidationType;
