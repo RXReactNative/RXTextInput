@@ -29,7 +29,7 @@ export function RXNumberObj() {
  *   @return  RXNumberObj()
  */
 export function RXNumberStringCleanUp(numStr, enablePoint = false) {
-  var fsData = RXNumberObj();
+  const fsData = RXNumberObj();
   if (numStr === '') {
     fsData.numStr = '';
     fsData.local = 0;
@@ -41,15 +41,15 @@ export function RXNumberStringCleanUp(numStr, enablePoint = false) {
     return fsData;
   }
   numStr = (numStr + "").replace(/[^\d\.]/g, ""); //去掉逗号
-  let decimalLocal = String(numStr).indexOf(".") + 1;
-  var n = 0;
-  var decimalSub = -1;
+  const decimalLocal = String(numStr).indexOf(".") + 1;
+  let n = 0;
+  let decimalSub = -1;
   if (decimalLocal > 0) {
     decimalSub = numStr.length - decimalLocal;
     n = decimalSub > 2 ? 2 : decimalSub;
   }
   if (numStr.length === 0 && n === 0) return '';
-  var tempStr = numStr;
+  const tempStr = numStr;
   //parseFloat() 函数可解析一个字符串，并返回一个浮点数。
   numStr = parseFloat(numStr)
   //reverse() 方法用于颠倒数组中元素的顺序。
@@ -88,28 +88,28 @@ export function RXNumberStringCleanUp(numStr, enablePoint = false) {
  */
 export function RXNumberStringComma(numStr, enablePoint = false) {
   if (!numStr) return '';
-  let text = numStr;
-  var fsData = RXNumberStringCleanUp(numStr, enablePoint);
+  const text = numStr;
+  const fsData = RXNumberStringCleanUp(numStr, enablePoint);
   numStr = fsData.numStr;
   if (!numStr) return '';
-  let n = fsData.local;
+  const n = fsData.local;
   // console.log('start===> s'+s);
   if (numStr === '') {
     return '';
   }
 
-  var l = numStr.split(".")[0].split("");
+  let l = numStr.split(".")[0].split("");
   if (l.length > 12) {
     l = l.splice(0, 12)
   }
   l = l.reverse()
-  let r = n > 0 ? numStr.split(".")[1] : "";
-  var t = "";
+  const r = n > 0 ? numStr.split(".")[1] : "";
+  let t = "";
   for (let i = 0; i < l.length; i++) {
     t += l[i] + ((i + 1) % 3 === 0 && (i + 1) != l.length ? "," : "");
   }
 
-  var result = t.split("").reverse().join("");
+  let result = t.split("").reverse().join("");
   if (n > 0) {
     if (r) {
       result = result + "." + r;
@@ -143,7 +143,7 @@ export function RXNumberCommentDecimal(numStr) {
     numStr = numStr.toString();
   }
 
-  var pos_decimal = numStr.indexOf('.');
+  let pos_decimal = numStr.indexOf('.');
   if (pos_decimal < 0) {
     pos_decimal = numStr.length;
     numStr = '' + numStr + '.';
@@ -159,7 +159,7 @@ export function RXNumberCommentDecimal(numStr) {
  */
 export function RXNumberCommentADecimal(numStr) {
   numStr = RXNumberStringDecimal(numStr);
-  let numDecimalArr = numStr.split(".")[1].split("");
+  const numDecimalArr = numStr.split(".")[1].split("");
   if (numDecimalArr[1] === '0') {
     numStr = numStr.substring(0, numStr.length - 1)
   }
@@ -180,9 +180,9 @@ export function RXNumberStringDecimal(numStr) {
 
   numStr = RXNumberCommentDecimal(numStr);
 
-  let numInteger = numStr.split(".")[0].split("");
-  let numDecimal = numStr.split(".")[1].split("");
-  var numDecimalTemp = ''
+  const numInteger = numStr.split(".")[0].split("");
+  const numDecimal = numStr.split(".")[1].split("");
+  let numDecimalTemp = ''
   for (let i = 0; i < 2; i++) {
     numDecimalTemp = numDecimalTemp + '' + numDecimal[i]
   }
@@ -278,9 +278,9 @@ export function RXNumberHaveDecimal(num = 0) {
 
   num = RXNumberCommentDecimal(num);
 
-  let numInteger = num.split(".")[0].split("");
+  const numInteger = num.split(".")[0].split("");
   if (numInteger > 0) return false
-  let numDecimal = num.split(".")[1].split("");
+  const numDecimal = num.split(".")[1].split("");
   if (numDecimal > 0) return false
   return true
 }
@@ -309,7 +309,7 @@ export function RXNumberThousand(num = 0): string {
 
   //千
   if (isNotANumber(num) && num - 1000 >= 0 && RXNumberHaveDecimal(num - 1000)) {
-    var new_num = num / 1000;
+    const new_num = num / 1000;
     return new_num + '千'
   }
   return num

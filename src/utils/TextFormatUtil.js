@@ -78,10 +78,10 @@ const TextFormatUtil = {
     }
     if (typeSpace === 0) return text;
 
-    var result = '';
+    let result = '';
     if (typeSpace === 1) {
-      let array = text.split("");
-      let step = spaces;
+      const array = text.split("");
+      const step = spaces;
       if (text.length <= step) return text;
       for (let i = 0; i <= array.length / step; i++) {
         if (text.length <= step) {
@@ -98,17 +98,17 @@ const TextFormatUtil = {
       result = result + text;
     }
     else {
-      var spaceIndex = 0;
+      let spaceIndex = 0;
       while (text.length) {
         if (spaces.length <= spaceIndex) {
-          let temp = text.substr(0, text.length) + '';
+          const temp = text.substr(0, text.length) + '';
           result = result + temp + '';
           text = '';
           break;
         };
-        let digit = spaces[spaceIndex];
+        const digit = spaces[spaceIndex];
         if (digit >= text.length) {
-          let temp = text.substr(0, text.length) + '';
+          const temp = text.substr(0, text.length) + '';
           result = result + temp + '';
           text = '';
           break;

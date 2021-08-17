@@ -102,7 +102,7 @@ export default class TextInputValue extends Component {
 
   constructor(props) {
     super(props);
-    var value = TextFormatUtil.normalizeValue(props.value || props.defaultValue);
+    const value = TextFormatUtil.normalizeValue(props.value || props.defaultValue);
     this.state = {
       value: this.formatValue(props.type, value),
       valueSize: this.props.placeholderFontSize,
@@ -124,7 +124,7 @@ export default class TextInputValue extends Component {
       onChangeText && onChangeText(this.formatSpace(value));
     }
 
-    var valueSize = nextProps.valueSize;
+    let valueSize = nextProps.valueSize;
     if (!nextProps.value || nextProps.placeholder === nextProps.value) {
       valueSize = nextProps.placeholderFontSize;
     }
@@ -168,9 +168,9 @@ export default class TextInputValue extends Component {
 
   onChange = (event) => {
     const { type, onChange } = this.props;
-    var value = this.formatSpace(this.filterPureNumber(event.nativeEvent.text));
+    let value = this.formatSpace(this.filterPureNumber(event.nativeEvent.text));
 
-    let that = this;
+    const that = this;
     if (value !== that.props.value) {
       onChange && onChange(value);
     }
@@ -194,7 +194,7 @@ export default class TextInputValue extends Component {
 
   onChangeText = (text) => {
     const { type, onChangeText } = this.props;
-    var value = this.formatSpace(this.filterPureNumber(text));
+    const value = this.formatSpace(this.filterPureNumber(text));
     if (value !== this.props.value) {
       onChangeText && onChangeText(value);
     }
@@ -237,7 +237,7 @@ export default class TextInputValue extends Component {
       || type === ValidationType.TypeEngineNo
       || type === ValidationType.TypeVIN
       || type === ValidationType.TypeRegistrationNo)) {
-      var value = this.state.value;
+      let value = this.state.value;
       if (value) {
         value = value.toLocaleUpperCase();
         onChange && onChange(value);
@@ -335,16 +335,16 @@ export default class TextInputValue extends Component {
       style = [{ fontSize: this.state.valueSize }].concat(style);
     }
 
-    var must_ps = secureTextEntry;
+    let must_ps = secureTextEntry;
     if (!secureTextEntry) {
       must_ps = type === 'password';
     }
 
 
-    let enable = this.inputEnable();
+    const enable = this.inputEnable();
 
     // console.log('TextInputValue maxLength='+ maxLength);
-    let input = <TextInput
+    const input = <TextInput
       {...other}
       ref={(e) => { this.refTextInputValue = e; }}
       style={[styles.container, style]}
@@ -374,7 +374,7 @@ export default class TextInputValue extends Component {
       }}
     />
 
-    var element = input;
+    let element = input;
     if ((Platform.OS === 'android')) {
       element = React.cloneElement(input, {
         underlineColorAndroid: 'transparent'

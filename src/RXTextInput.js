@@ -29,8 +29,8 @@ class RXTextInput extends BaseTextInputView {
   getPlaceholderFrame() {
     const { clearButtonMode } = this.props;
     const { placeholderShow, inputStyleFrame } = this.state;
-    let p_height = inputStyleFrame.height;
-    var p_width = inputStyleFrame.width;
+    const p_height = inputStyleFrame.height;
+    let p_width = inputStyleFrame.width;
     if (p_width <= 0) {
       p_width = 0;
     }

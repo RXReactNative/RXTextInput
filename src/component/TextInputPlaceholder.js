@@ -36,7 +36,7 @@ class TextInputPlaceholder extends Component {
 
   constructor(props) {
     super(props);
-    let placeholderShow = !this._isHaveText(this.props.value);
+    const placeholderShow = !this._isHaveText(this.props.value);
     this.state = {
       placeholderFontSize: this.props.placeholderFontSize,
       placeholderShow,
@@ -50,14 +50,14 @@ class TextInputPlaceholder extends Component {
     let thisplaceholderFontSize = this.state.placeholderFontSize;
     if (thisplaceholderFontSize != placeholderFontSize) {
       if (!placeholderFontSize) {
-        let fontSize = style ? style.fontSize : 0;
+        const fontSize = style ? style.fontSize : 0;
         thisplaceholderFontSize = fontSize | 16;
       }
       else {
         thisplaceholderFontSize = placeholderFontSize;
       }
     }
-    let placeholderShow = !this._isHaveText(value);
+    const placeholderShow = !this._isHaveText(value);
     this.setState({ placeholderShow, placeholderFontSize: thisplaceholderFontSize })
   }
 
@@ -94,21 +94,21 @@ class TextInputPlaceholder extends Component {
 
   _onBlur = () => {
     const { value, onBlur } = this.props;
-    let placeholderShow = !this._isHaveText(value);
+    const placeholderShow = !this._isHaveText(value);
     this.setState({ placeholderShow })
     onBlur && onBlur();
   }
 
   _onKeyPress = () => {
     const { value, onKeyPress } = this.props;
-    let placeholderShow = !this._isHaveText(value);
+    const placeholderShow = !this._isHaveText(value);
     this.setState({ placeholderShow })
     onKeyPress && onKeyPress();
   }
 
   _onEndEditing = () => {
     const { value, onEndEditing } = this.props;
-    let placeholderShow = !this._isHaveText(value);
+    const placeholderShow = !this._isHaveText(value);
     this.setState({ placeholderShow })
     onEndEditing && onEndEditing();
   }
@@ -116,15 +116,15 @@ class TextInputPlaceholder extends Component {
   onChange = (text) => {
     const { onChange } = this.props;
     const value = this._getText(text);
-    let placeholderShow = !this._isHaveText(value);
+    const placeholderShow = !this._isHaveText(value);
     this.setState({ placeholderShow })
     onChange && onChange(value);
   }
 
   onChangeText = (text) => {
     const { onChangeText } = this.props;
-    const value = this.this._getText(text);
-    let placeholderShow = !this._isHaveText(value);
+    const value = this._getText(text);
+    const placeholderShow = !this._isHaveText(value);
     this.setState({ placeholderShow })
     onChangeText && onChangeText(value);
   }
@@ -260,11 +260,11 @@ class TextInputPlaceholder extends Component {
           onEndEditing={() => { this._onEndEditing() }}
           onKeyPress={() => { this._onKeyPress() }}
           onLayout={(event) => {
-            let x = Math.ceil(event.nativeEvent.layout.x);
-            let y = Math.ceil(event.nativeEvent.layout.y);
-            let height = Math.ceil(event.nativeEvent.layout.height);
-            let width = Math.ceil(event.nativeEvent.layout.width);
-            let inputStyleFrame = { x, y, width, height };
+            const x = Math.ceil(event.nativeEvent.layout.x);
+            const y = Math.ceil(event.nativeEvent.layout.y);
+            const height = Math.ceil(event.nativeEvent.layout.height);
+            const width = Math.ceil(event.nativeEvent.layout.width);
+            const inputStyleFrame = { x, y, width, height };
             this.setState({ inputStyleFrame })
           }}
         />
@@ -295,9 +295,9 @@ class TextInputPlaceholder extends Component {
                 multiline={multiline}
                 numberOfLines={numberOfLines}
                 onLayout={(event) => {
-                  let height = Math.ceil(event.nativeEvent.layout.height);
-                  let width = Math.ceil(event.nativeEvent.layout.width);
-                  let placeholderStyleSize = { width, height };
+                  const height = Math.ceil(event.nativeEvent.layout.height);
+                  const width = Math.ceil(event.nativeEvent.layout.width);
+                  const placeholderStyleSize = { width, height };
                   this.setState({ placeholderStyleSize })
                 }}
               />
