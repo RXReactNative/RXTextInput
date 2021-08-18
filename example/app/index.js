@@ -21,7 +21,9 @@ import {
   ScrollView,
 } from 'react-native'
 
-import RXInput from 'react-native-rxinput'
+import RXInput from '../react-native-rxinput'
+
+import { version } from '../../package.json'
 
 export default class RXInputDemo extends Component {
   constructor(props) {
@@ -34,7 +36,7 @@ export default class RXInputDemo extends Component {
   render() {
     return (
       <ScrollView style={styles.container}>
-        <Text style={styles.tip}>{"react-native-rxinput"}</Text>
+        <Text style={styles.tip}>{"react-native-rxinput  v" + version}</Text>
         <View style={styles.contentView}>
           <RXInput
             style={styles.nomalTextInput}
@@ -50,62 +52,86 @@ export default class RXInputDemo extends Component {
             type='number'
             maxLength={20}
             style={styles.nomalTextInput}
-            placeholder={'type="number" 数字键盘'}
+            placeholder={'type="number" 数字键盘 - 无长度限制'}
           />
           <View style={styles.line} />
           <RXInput
             type='int'
             style={styles.borTextInput}
-            placeholder={'type=int "数字键盘 - 整型"'}
+            placeholder={'type=int "数字键盘 - 整型 - 无长度限制"'}
             placeholderColor={'#8B8B7A'}
             placeholderFontSize={12}
           />
           <View style={styles.line} />
           <RXInput
+            type='float'
+            style={styles.borTextInput}
+            placeholder={'type=float "数字键盘 - 浮点型(最多保留2位小数)" - 无长度限制'}
+          />
+          <View style={styles.line} />
+          <RXInput
+            type='amount'
+            style={styles.borTextInput}
+            placeholder={'type=amount 请输入金额, `默认:最多10个字符` 8个数字'}
+          />
+          <View style={styles.line} />
+          <View style={styles.line} />
+          <View style={styles.line} />
+          <RXInput
             type='phone'
             style={styles.borTextInput}
-            placeholder={'type=phone 请输入手机号'}
+            placeholder={'type=phone 请输入手机号 - 默认: `13个字符` 11数字'}
           />
           <View style={styles.line} />
           <RXInput
-            type='VIN'
+            type='bankCard'
             style={styles.borTextInput}
-            placeholder={'type=VIN 请输入车架号, 字母在键盘消失后 自动大写'}
-          />
-          <View style={styles.line} />
-          <RXInput
-            type={'password'}
-            style={styles.borTextInput}
-            placeholder={'type=password 请输入密码'}
-            returnKeyType={'done'}
+            placeholder={'type=bankCard 请输入银行卡号 - 默认: `19个字符` 16数字'}
           />
           <View style={styles.line} />
           <RXInput
             type={'idCardNo'}
             style={styles.borTextInput}
-            placeholder={'type=idCardNo 请输入身份证号码'}
+            placeholder={'type=idCardNo 请输入身份证号码 - 默认: 18位字符 `数字+字母`'}
           />
+          <View style={styles.line} />
+          <RXInput
+            type='VIN'
+            style={styles.borTextInput}
+            placeholder={'type=VIN 请输入车架号, 字母在键盘消失后 自动大写 - 默认: 17为字符 `字母+数字`'}
+          />
+          <View style={styles.line} />
+          <RXInput
+            type={'plateNo'}
+            style={styles.borTextInput}
+            placeholder={'type=plateNo 请输入车牌号, 字母在键盘消失后 自动大写 - 默认: 8为字符 `字母+数字`'}
+          />
+          <View style={styles.line} />
+          <View style={styles.line} />
           <View style={styles.line} />
           <RXInput
             type={'captcha'}
             style={styles.borTextInput}
-            placeholder={'type=captcha 请输入验证码 `仅数字`'}
-          />
-          <View style={styles.line} />
-          <View style={styles.line} />
-          <Text style={styles.tip}>{"下面验证需要处理"}</Text>
-          <RXInput
-            type='float'
-            style={styles.borTextInput}
-            placeholder={'type=float "数字键盘 - 浮点型(最多保留2位小数)"'}
+            placeholder={'type=captcha 请输入验证码 - 默认: `仅6位数字`'}
           />
           <View style={styles.line} />
           <RXInput
             type={'graphCaptcha'}
             style={styles.borTextInput}
-            placeholder={'type=graphCaptcha 请输入校验图形验证码 `字母+数字` 不应该出现`.-`'}
+            placeholder={'type=graphCaptcha 请输入校验图形验证码 - 默认: `仅4位数字`'}
           />
           <View style={styles.line} />
+          <RXInput
+            type={'password'}
+            style={styles.borTextInput}
+            placeholder={'type=password 请输入密码 - 默认: 无长度限制'}
+            returnKeyType={'done'}
+          />
+          <View style={styles.line} />
+          <View style={styles.line} />
+
+
+          <Text style={styles.tip}>{"下面验证需要处理"}</Text>
           <RXInput
             type={'email'}
             style={styles.borTextInput}
@@ -113,17 +139,7 @@ export default class RXInputDemo extends Component {
             returnKeyType={'done'}
           />
           <View style={styles.line} />
-          <RXInput
-            type='bankCard'
-            style={styles.borTextInput}
-            placeholder={'type=bankCard 请输入银行卡号, `自动加空格，位数`'}
-          />
           <View style={styles.line} />
-          <RXInput
-            type='amount'
-            style={styles.borTextInput}
-            placeholder={'type=amount 请输入金额, `位数`'}
-          />
           <View style={styles.line} />
         </View>
       </ScrollView>

@@ -8,7 +8,9 @@ const babelLoaderConfiguration = {
   include: [
     path.resolve(appDirectory, "app"),
     path.resolve(appDirectory, 'App.js'),
-    path.resolve(appDirectory, "./node_modules/react-native-rxinput")
+
+    path.resolve(appDirectory, 'react-native-rxinput'),
+    // path.resolve(appDirectory, "./node_modules/react-native-rxinput")
   ],
   use: {
     loader: "babel-loader",

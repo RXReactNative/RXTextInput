@@ -1,19 +1,18 @@
 /**
  * 配置
- * @this RXAmountInput : placeholder 和 input `底部对齐`
+ * @this RXTextInput: placeholder 和 input `垂直居中`
  *
  * @flow
  * -------
    涉及到 < 桥接原生的 TextInput > 的 placeholderFontSize 、 placeholderStyle
-   请使用 封装的<RXAmountInput>
+   请使用 封装的<RXTextInput>
 
  *
  */
 'use strict'
-
 import BaseTextInputView from './component/TextInputPlaceholder'
 
-class RXAmountInput extends BaseTextInputView {
+class RXTextInput extends BaseTextInputView {
   static propTypes = {
     ...BaseTextInputView.propTypes,
   }
@@ -29,7 +28,7 @@ class RXAmountInput extends BaseTextInputView {
 
   getPlaceholderFrame() {
     const { clearButtonMode } = this.props;
-    const { placeholderShow, inputStyleFrame, placeholderStyleSize } = this.state;
+    const { placeholderShow, inputStyleFrame } = this.state;
     const p_height = inputStyleFrame.height;
     let p_width = inputStyleFrame.width;
     if (p_width <= 0) {
@@ -41,18 +40,18 @@ class RXAmountInput extends BaseTextInputView {
         p_width -= 20;
       }
     }
-
-    let top = 0;
-    if (p_height) {
-      top = p_height - placeholderStyleSize.height - 2;
-      if (top <= 0) top = 0;
+    if (p_width < 0) {
+      p_width = 0;
     }
+
     return {
       left: inputStyleFrame.x,
-      top: top,
+      top: inputStyleFrame.y,
       width: p_width,
+      height: p_height
     }
   }
+
 }
 
-module.exports = RXAmountInput;
+module.exports = RXTextInput;

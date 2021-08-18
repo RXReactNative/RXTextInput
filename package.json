@@ -7,16 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "react-native",
     "textinput",
-    "rxinput",
-    "react-component",
-    "react native textinput",
-    "react-native-rxinput",
-    "react native rxinput",
-    "ios",
-    "android",
-    "windows"
+    "input",
+    "react-native-input",
+    "react-native-rxinput"
   ],
   "author": "srxboys (https://github.com/srxboys)",
   "license": "MIT",

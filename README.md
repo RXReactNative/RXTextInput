@@ -46,19 +46,20 @@ import RXTextInput, {RXNumberUtil} from 'react-native-rxinput'
 
 #### `type`
 |      类型     |             说明            |      默认      |
-| :----------- | :-------------------------: | ------------: | 
-| text         | 空(默认键盘)                  |    true       | 
-| number       | 数字键盘                      |               | 
-| int          | 数字键盘 - 整型                |               | 
+| :----------- | :-------------------------: | ------------: |
+| text         | 空(默认键盘)                  |    true       |
+| number       | 数字键盘                      |               |
+| int          | 数字键盘 - 整型                |               |
 | float        | 数字键盘 - 浮点型(最多保留2位小数) |              |
+| amount       | 金额 (8位数字 + 格式化)        |                |
 |              |                             |               |
-| phone        | 手机                         |               | 
-| bankCard     | 银行卡                       |               | 
-| VIN          | 车架号                       |               |
-| idCardNo     | 身份证                       |               |
+| phone        | 手机 (11位数字 + 格式化)       |               |
+| bankCard     | 银行卡 (19位数字 + 格式化)      |               |
+| VIN          | 车架号 (17位字母+数字)         |               |
+| idCardNo     | 身份证 (18位)                 |               |
 | email        | 邮箱                         |               |
-| captcha      | 验证码                       |               |
-| graphCaptcha | 校验图形验证码                 |               |
+| captcha      | 验证码 (6位数字)               |               |
+| graphCaptcha | 校验图形验证码 (4位数字)        |               |
 | password     | 输入的文本加密                 |               |
 
 ---
