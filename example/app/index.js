@@ -21,7 +21,7 @@ import {
   ScrollView,
 } from 'react-native'
 
-import RXInput from '../react-native-rxinput'
+import RXInput from 'react-native-rxinput'
 import { version } from '../../package.json'
 
 export default class RXInputDemo extends Component {

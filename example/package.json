@@ -12,16 +12,15 @@
     "mvToPreFolder": "node ./script/web/mv-docs.js",
     "web-build-prod": "set NODE_ENV=production && npm run clearFolder && webpack -p --config ./web/webpack.prod.config.js && npm run mvToPreFolder",
     "web-build-dev-server": "set NODE_ENV=development && npm run clearFolder && webpack-dev-server -d --config ./web/webpack.dev.config.js --port 3001 --inline --hot --colors  --history-api-fallback",
-    "web-nginx-dev": "set NODE_ENV=development && npm run clearFolder && webpack -p --config ./web/webpack.dev.config.js",
-    "copy": "node script/web/copy-input"
+    "web-nginx-dev": "set NODE_ENV=development && npm run clearFolder && webpack -p --config ./web/webpack.dev.config.js"
   },
   "dependencies": {
     "react": "16.11.0",
     "react-art": "16.11.0",
     "react-dom": "16.11.0",
     "react-native": "0.62.2",
-    "react-native-rxinput": "^0.0.2",
-    "react-native-web": "^0.12.2"
+    "react-native-web": "^0.12.2",
+    "react-native-rxinput": "file:../"
   },
   "devDependencies": {
     "babel": "6.23.0",
