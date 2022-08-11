@@ -1,6 +1,6 @@
 {
   "name": "react-native-rxinput",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "React Native rxinput for IOS & Android & windows.",
   "main": "index.js",
   "scripts": {

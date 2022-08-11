@@ -6,7 +6,6 @@
  * -------
  *
  */
-
+import React from 'react';
 import TextInputValue from './component/TextInputValue';
-
 export default TextInputValue;
