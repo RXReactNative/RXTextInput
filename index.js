@@ -7,6 +7,9 @@ import TextInputValue from './src/component/TextInputValue';
 
 import RXNumberUtil from './src/utils/RXNumberUtil';
 import TextFormatUtil from './src/utils/TextFormatUtil';
+import RXValidationType from './src/utils/RXValidationType'
+
+import RXVersion from './src/utils/rversion'
 
 export {
   RXTextInput,
@@ -17,6 +20,9 @@ export {
 
   RXNumberUtil,
   TextFormatUtil,
+  RXValidationType,
+
+  RXVersion,
 };
 
 export default RXTextInput;
